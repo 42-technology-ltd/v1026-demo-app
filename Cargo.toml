@@ -1,0 +1,46 @@
+[package]
+authors = ["Jonathan Pallant (42 Technology) <jonathan.pallant@42technology.com"]
+edition = "2018"
+readme = "README.md"
+name = "v1026-demo-app"
+version = "0.1.0"
+
+[dependencies]
+cortex-m = "0.6"
+cortex-m-rt = "0.6"
+embedded-hal = { version = "0.2.2", features = ["unproven"] }
+nb = "0.1"
+void = { version = "1.0.2", default-features = false }
+spin = "0.5"
+nrfxlib = "0.4"
+nrfxlib-sys = "1.1.0-rc2"
+menu = "0.3"
+heapless = "0.5"
+log = "0.4"
+alloc-cortex-m = "0.3.5"
+actinius-icarus-bsp = { path = "./deps/nrf52-hal/boards/actinius-icarus" }
+quiche = { path = "./deps/quiche" }
+
+# this lets you use `cargo fix`!
+[[bin]]
+name = "v1026-demo-app"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1 # better optimizations
+debug = true # symbols are nice and they don't increase the size on Flash
+lto = true # better optimizations
+incremental = false
+opt-level = "z"
+
+[profile.dev]
+debug = true
+lto = false
+incremental = false
+opt-level = 1
+
+[features]
+# no features by default
+default = []
+verbose-trace = []

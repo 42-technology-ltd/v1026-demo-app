@@ -1,0 +1,12 @@
+[submodule "deps/quiche"]
+	path = deps/quiche
+	url = https://github.com/42-technology-ltd/quiche
+[submodule "deps/ring"]
+	path = deps/ring
+	url = https://github.com/42-technology-ltd/ring
+[submodule "deps/nrf52-hal"]
+	path = deps/nrf52-hal
+	url = https://github.com/42-technology-ltd/nrf52-hal
+[submodule "deps/libc"]
+	path = deps/libc
+	url = https://github.com/42-technology-ltd/libc
